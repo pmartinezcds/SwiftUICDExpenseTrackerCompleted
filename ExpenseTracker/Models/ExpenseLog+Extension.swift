@@ -8,8 +8,9 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
-extension ExpenseLog: Identifiable {
+extension ExpenseLog {
     
     var categoryEnum: Category {
         Category(rawValue: category ?? "") ?? .other
@@ -26,6 +27,11 @@ extension ExpenseLog: Identifiable {
     var amountText: String {
         Utils.numberFormatter.string(from: NSNumber(value: amount?.doubleValue ?? 0)) ?? ""
     }
+    
+    var noteText: String {
+        note ?? ""
+    }
+    
     
     static func fetchAllCategoriesTotalAmountSum(context: NSManagedObjectContext, completion: @escaping ([(sum: Double, category: Category)]) -> ()) {
         let keypathAmount = NSExpression(forKeyPath: \ExpenseLog.amount)
@@ -80,6 +86,34 @@ extension ExpenseLog: Identifiable {
             return nil
         } else {
             return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        }
+    }
+
+    static func predicateMonth(with months: [Month]) -> NSPredicate? {
+        var predicates = [NSPredicate]()
+        let categoriesString = months.map { $0.id}
+        
+        categoriesString.forEach { month in
+            let selectedMonth = month
+            let selectedYear = Calendar.current.component(.year, from: Date())
+            var components = DateComponents()
+            components.month = selectedMonth
+            components.year = selectedYear
+            let startDateOfMonth = Calendar.current.date(from: components)
+
+            //Now create endDateOfMonth using startDateOfMonth
+            components.year = 0
+            components.month = 1
+            components.day = -1
+            let endDateOfMonth = Calendar.current.date(byAdding: components, to: startDateOfMonth!)
+            
+            predicates.append(NSPredicate(format: "%K >= %@ && %K <= %@", "date", startDateOfMonth! as NSDate, "date", endDateOfMonth! as NSDate))
+        }
+        
+        if predicates.isEmpty {
+            return nil
+        } else {
+            return NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
         }
     }
     

@@ -9,7 +9,7 @@
 import SwiftUI
 import CoreData
 
-struct LogsTabView: View {
+struct MonthlyTabView: View {
     
     @Environment(\.managedObjectContext)
         var context: NSManagedObjectContext
@@ -19,25 +19,21 @@ struct LogsTabView: View {
     @State private var sortType = SortType.date
     @State private var sortOrder = SortOrder.descending
     
-    @State var selectedCategories: Set<Category> = Set()
+    @State var selectedCategories: Set<Month> = Set()
     @State var isAddFormPresented: Bool = false
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                SearchBar(text: $searchText, keyboardHeight: $searchBarHeight, placeholder: "Search expenses")
-                FilterCategoriesView(selectedCategories: $selectedCategories)
+                FilterMonthsView(selectedCategories: $selectedCategories)
                 Divider()
-                SelectSortOrderView(sortType: $sortType, sortOrder: $sortOrder)
-                Divider()
-                LogListView(predicate: ExpenseLog.predicate(with: Array(selectedCategories), searchText: searchText), sortDescriptor: ExpenseLogSort(sortType: sortType, sortOrder: sortOrder).sortDescriptor)
+                LogListView(predicate: ExpenseLog.predicateMonth(with: Array(selectedCategories)), sortDescriptor: ExpenseLogSort(sortType: sortType, sortOrder: sortOrder).sortDescriptor)
             }
             .padding(.bottom, searchBarHeight)
             .sheet(isPresented: $isAddFormPresented) {
                 LogFormView(context: self.context)
             }
-            .navigationBarItems(trailing: Button(action: addTapped) { Text("Add").font(Font.custom("GT", size: 17)) })
-            .navigationBarTitle("Expense Logs", displayMode: .inline)
+            .navigationBarTitle("Monthly Logs", displayMode: .inline)
         }
     }
     
@@ -49,7 +45,7 @@ struct LogsTabView: View {
     
 }
 
-struct LogsTabView_Previews: PreviewProvider {
+struct MonthlyTabView_Previews: PreviewProvider {
     static var previews: some View {
         LogsTabView()
     }

@@ -35,17 +35,18 @@ enum Category: String, CaseIterable {
     
     var color: Color {
         switch self {
-        case .donation: return Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))
-        case .food: return Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1))
-        case .entertainment: return Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1))
-        case .health: return Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
-        case .shopping: return Color(#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1))
-        case .transportation: return Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
-        case .utilities: return Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
-        case .other: return Color(#colorLiteral(red: 0.5791940689, green: 0.1280144453, blue: 0.5726861358, alpha: 1))
+        case .donation: return Color(hexString: "DB69A9")
+        case .food: return Color(hexString: "3C8BE0")
+        case .entertainment: return Color(hexString: "B73350")
+        case .health: return Color(hexString: "E0A73C")
+        case .shopping: return Color(hexString: "E8DE5F")
+        case .transportation: return Color(hexString: "42DD76")
+        case .utilities: return Color(hexString: "3BD0DD")
+        case .other: return Color(hexString: "A057E0")
         }
     }
 }
+
 
 extension Category: Identifiable {
     var id: String { rawValue }

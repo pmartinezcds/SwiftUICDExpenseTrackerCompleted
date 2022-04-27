@@ -14,7 +14,7 @@ struct ContentView: View {
             DashboardTabView()
                 .tabItem {
                     VStack {
-                        Text("Dashboard")
+                        Text("Dashboard").font(Font.custom("Canela-Light", size: 10))
                         Image(systemName: "chart.pie")
                     }
             }
@@ -23,11 +23,20 @@ struct ContentView: View {
             LogsTabView()
                 .tabItem {
                     VStack {
-                        Text("Logs")
+                        Text("Logs").font(Font.custom("Canela-Light", size: 10))
                         Image(systemName: "tray")
                     }
             }
             .tag(1)
+            
+            MonthlyTabView()
+                .tabItem {
+                    VStack {
+                        Text("Monthly").font(Font.custom("Canela-Light", size: 10))
+                        Image(systemName: "calendar")
+                    }
+            }
+            .tag(2)
         }
     }
 }

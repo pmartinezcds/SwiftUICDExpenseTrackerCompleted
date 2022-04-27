@@ -41,14 +41,15 @@ struct LogListView: View {
                     self.logToEdit = log
                 }) {
                     HStack(spacing: 16) {
-                        CategoryImageView(category: log.categoryEnum)
+                       CategoryImageView(category: log.categoryEnum)
 
                         VStack(alignment: .leading, spacing: 8) {
-                            Text(log.nameText).font(.headline)
-                            Text(log.dateText).font(.subheadline)
+                            Text(log.nameText).font(Font.custom("GT", size: 20))
+                            Text(log.dateText).font(Font.custom("Canela-Light", size: 17))
+                            Text(log.noteText).font(Font.custom("Canela-Light", size: 12))
                         }
                         Spacer()
-                        Text(log.amountText).font(.headline)
+                        Text(log.amountText).font(Font.custom("GT", size: 20))
                     }
                     .padding(.vertical, 4)
                 }
@@ -65,7 +66,8 @@ struct LogListView: View {
                     name: log.name ?? "",
                     amount: log.amount?.doubleValue ?? 0,
                     category: Category(rawValue: log.category ?? "") ?? .food,
-                    date: log.date ?? Date()
+                    date: log.date ?? Date(),
+                    note: log.note ?? ""
                 )
             }
         }

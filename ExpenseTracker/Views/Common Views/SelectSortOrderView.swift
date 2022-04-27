@@ -18,7 +18,7 @@ struct SelectSortOrderView: View {
     
     var body: some View {
         HStack {
-            Text("Sort by")
+            Text("Sort by").font(Font.custom("Canela-Light", size: 18))
             Picker(selection: $sortType, label: Text("Sort by")) {
                 ForEach(SortType.allCases) { type in
                     Image(systemName: type == .date ? "calendar" : "dollarsign.circle")
@@ -27,7 +27,7 @@ struct SelectSortOrderView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             
-            Text("Order by")
+            Text("Order by").font(Font.custom("Canela-Light", size: 18))
             Picker(selection: $sortOrder, label: Text("Order")) {
                 ForEach(sortOrders) { order in
                     Image(systemName: order == .ascending ? "arrow.up" : "arrow.down")

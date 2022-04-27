@@ -9,15 +9,17 @@
 import SwiftUI
 
 struct CategoryRowView: View {
+    @EnvironmentObject var currency: CurrencySettings
+
     let category: Category
     let sum: Double
     
     var body: some View {
-        HStack {
+        VStack {
             CategoryImageView(category: category)
-            Text(category.rawValue.capitalized)
+            Text((sum * Double(currency.rate)).formattedCurrencyText).font(Font.custom("GT", size: 20))
             Spacer()
-            Text(sum.formattedCurrencyText).font(.headline)
+            Text(category.rawValue.capitalized).font(Font.custom("Canela-Light", size: 18))
         }
     }
 }

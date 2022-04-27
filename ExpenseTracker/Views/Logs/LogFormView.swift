@@ -18,6 +18,7 @@ struct LogFormView: View {
     @State var amount: Double = 0
     @State var category: Category = .utilities
     @State var date: Date = Date()
+    @State var note: String = ""
     
     @Environment(\.presentationMode)
     var presentationMode
@@ -30,24 +31,26 @@ struct LogFormView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Name", text: $name)
+                TextField("Name", text: $name).font(Font.custom("Canela-Light", size: 18))
                     .disableAutocorrection(true)
-                TextField("Amount", value: $amount, formatter: Utils.numberFormatter)
+                TextField("Amount", value: $amount, formatter: Utils.numberFormatter).font(Font.custom("Canela-Light", size: 18))
                     .keyboardType(.numbersAndPunctuation)
                     
-                Picker(selection: $category, label: Text("Category")) {
+                Picker(selection: $category, label: Text("Category").font(Font.custom("Canela-Light", size: 18))) {
                     ForEach(Category.allCases) { category in
                         Text(category.rawValue.capitalized).tag(category)
                     }
                 }
                 DatePicker(selection: $date, displayedComponents: .date) {
-                    Text("Date")
+                    Text("Date").font(Font.custom("Canela-Light", size: 18))
                 }
+                TextField("Notes", text: $note).font(Font.custom("Canela-Light", size: 18))
+                    .disableAutocorrection(true)
             }
 
             .navigationBarItems(
-                leading: Button(action: self.onCancelTapped) { Text("Cancel")},
-                trailing: Button(action: self.onSaveTapped) { Text("Save")}
+                leading: Button(action: self.onCancelTapped) { Text("Cancel").font(Font.custom("Canela-Light", size: 18))},
+                trailing: Button(action: self.onSaveTapped) { Text("Save").font(Font.custom("Canela-Light", size: 18))}
             ).navigationBarTitle(title)
             
         }
@@ -73,6 +76,7 @@ struct LogFormView: View {
         log.category = self.category.rawValue
         log.amount = NSDecimalNumber(value: self.amount)
         log.date = self.date
+        log.note = self.note
         
         do {
             try context.save()

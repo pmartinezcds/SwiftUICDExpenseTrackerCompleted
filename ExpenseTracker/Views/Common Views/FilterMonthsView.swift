@@ -8,23 +8,23 @@
 
 import SwiftUI
 
-struct FilterCategoriesView: View {
+struct FilterMonthsView: View {
     
-    @Binding var selectedCategories: Set<Category>
-    private let categories = Category.allCases
+    @Binding var selectedCategories: Set<Month>
+    private let categories = Month.allCases
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
-                ForEach(categories) { category in
-                    FilterButtonView(
-                        category: category,
-                        isSelected: self.selectedCategories.contains(category),
+                ForEach(categories) { month in
+                    FilterMonthButtonView(
+                        month: month,
+                        isSelected: self.selectedCategories.contains(month),
                         onTap: self.onTap
                     )
                         
-                        .padding(.leading, category == self.categories.first ? 16 : 0)
-                        .padding(.trailing, category == self.categories.last ? 16 : 0)
+                        .padding(.leading, month == self.categories.first ? 16 : 0)
+                        .padding(.trailing, month == self.categories.last ? 16 : 0)
                     
                 }
             }
@@ -32,27 +32,27 @@ struct FilterCategoriesView: View {
         .padding(.vertical)
     }
     
-    func onTap(category: Category) {
-        if selectedCategories.contains(category) {
-            selectedCategories.remove(category)
+    func onTap(month: Month) {
+        if selectedCategories.contains(month) {
+            selectedCategories.remove(month)
         } else {
-            selectedCategories.insert(category)
+            selectedCategories.insert(month)
         }
     }
 }
 
-struct FilterButtonView: View {
+struct FilterMonthButtonView: View {
     
-    var category: Category
+    var month: Month
     var isSelected: Bool
-    var onTap: (Category) -> ()
+    var onTap: (Month) -> ()
     
     var body: some View {
         Button(action: {
-            self.onTap(self.category)
+            self.onTap(self.month)
         }) {
             HStack(spacing: 8) {
-                Text(category.rawValue.capitalized)
+                Text(month.rawValue.capitalized)
                     .fixedSize(horizontal: true, vertical: true)
                     .font(Font.custom("GT", size: 20))
                 
@@ -65,17 +65,17 @@ struct FilterButtonView: View {
                 
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(isSelected ? category.color : Color(UIColor.lightGray), lineWidth: 1))
+                    .stroke(isSelected ? Color(hexString: "DB69A9") : Color(UIColor.lightGray), lineWidth: 1))
                 .frame(height: 44)
         }
-        .foregroundColor(isSelected ? category.color : Color(UIColor.gray))
+        .foregroundColor(isSelected ? Color(hexString: "DB69A9") : Color(UIColor.gray))
     }
     
     
 }
 
 
-struct FilterCategoriesView_Previews: PreviewProvider {
+struct FilterMonthsView_Previews: PreviewProvider {
     static var previews: some View {
         FilterCategoriesView(selectedCategories: .constant(Set()))
     }

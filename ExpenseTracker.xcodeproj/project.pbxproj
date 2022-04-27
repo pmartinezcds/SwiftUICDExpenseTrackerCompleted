@@ -33,6 +33,16 @@
 		8BE1F57F244C0D720017E21D /* SelectSortOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1F57E244C0D720017E21D /* SelectSortOrderView.swift */; };
 		8BE1F581244C0DC80017E21D /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1F580244C0DC80017E21D /* LogListView.swift */; };
 		8BE1F583244C0DD10017E21D /* LogFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1F582244C0DD10017E21D /* LogFormView.swift */; };
+		FF526BFF2818783700C9BCA0 /* GT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF526BFE2818783700C9BCA0 /* GT.ttf */; };
+		FF526C012818788100C9BCA0 /* GT-Ultra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF526C002818788100C9BCA0 /* GT-Ultra.ttf */; };
+		FF526C032818789F00C9BCA0 /* Canela-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF526C022818789F00C9BCA0 /* Canela-Light.ttf */; };
+		FF526C0528188FF800C9BCA0 /* MonthlyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF526C0428188FF800C9BCA0 /* MonthlyTabView.swift */; };
+		FF526C082818923E00C9BCA0 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF526C072818923E00C9BCA0 /* Month.swift */; };
+		FF526C0A2818941900C9BCA0 /* FilterMonthsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF526C092818941900C9BCA0 /* FilterMonthsView.swift */; };
+		FF526C0C281953FA00C9BCA0 /* CurrencyApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF526C0B281953FA00C9BCA0 /* CurrencyApiService.swift */; };
+		FF526C0E28195BBE00C9BCA0 /* APICurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF526C0D28195BBE00C9BCA0 /* APICurrency.swift */; };
+		FF526C1028196AC300C9BCA0 /* EurCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF526C0F28196AC300C9BCA0 /* EurCurrency.swift */; };
+		FF526C162819962000C9BCA0 /* CurrencySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF526C152819962000C9BCA0 /* CurrencySettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +74,16 @@
 		8BE1F57E244C0D720017E21D /* SelectSortOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSortOrderView.swift; sourceTree = "<group>"; };
 		8BE1F580244C0DC80017E21D /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		8BE1F582244C0DD10017E21D /* LogFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormView.swift; sourceTree = "<group>"; };
+		FF526BFE2818783700C9BCA0 /* GT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GT.ttf; sourceTree = "<group>"; };
+		FF526C002818788100C9BCA0 /* GT-Ultra.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GT-Ultra.ttf"; sourceTree = "<group>"; };
+		FF526C022818789F00C9BCA0 /* Canela-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Canela-Light.ttf"; sourceTree = "<group>"; };
+		FF526C0428188FF800C9BCA0 /* MonthlyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTabView.swift; sourceTree = "<group>"; };
+		FF526C072818923E00C9BCA0 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		FF526C092818941900C9BCA0 /* FilterMonthsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMonthsView.swift; sourceTree = "<group>"; };
+		FF526C0B281953FA00C9BCA0 /* CurrencyApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyApiService.swift; sourceTree = "<group>"; };
+		FF526C0D28195BBE00C9BCA0 /* APICurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICurrency.swift; sourceTree = "<group>"; };
+		FF526C0F28196AC300C9BCA0 /* EurCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurCurrency.swift; sourceTree = "<group>"; };
+		FF526C152819962000C9BCA0 /* CurrencySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +116,13 @@
 		8BE1F53D244C04E90017E21D /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FF526C11281987FD00C9BCA0 /* Data */,
 				8BE1F53E244C04E90017E21D /* AppDelegate.swift */,
 				8BE1F540244C04E90017E21D /* SceneDelegate.swift */,
 				8BE1F560244C07EC0017E21D /* Views */,
 				8BE1F55B244C071C0017E21D /* Helpers */,
 				8BE1F555244C057C0017E21D /* Models */,
+				FF526BFD2818754900C9BCA0 /* Fonts */,
 				8BE1F544244C04EA0017E21D /* Assets.xcassets */,
 				8BE1F549244C04EA0017E21D /* LaunchScreen.storyboard */,
 				8BE1F54C244C04EA0017E21D /* Info.plist */,
@@ -121,10 +143,12 @@
 		8BE1F555244C057C0017E21D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF526C0F28196AC300C9BCA0 /* EurCurrency.swift */,
 				8BE1F561244C08020017E21D /* CoreDataStack.swift */,
 				8BE1F556244C05AB0017E21D /* ExpenseLog+Extension.swift */,
 				8BE1F559244C060B0017E21D /* Category.swift */,
 				8BE1F55E244C07BC0017E21D /* Sort.swift */,
+				FF526C072818923E00C9BCA0 /* Month.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,10 +165,12 @@
 		8BE1F560244C07EC0017E21D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF526C14281995F700C9BCA0 /* Observables */,
 				8BE1F542244C04E90017E21D /* ContentView.swift */,
 				8BE1F56C244C09770017E21D /* Common Views */,
 				8BE1F565244C08AF0017E21D /* Logs */,
 				8BE1F563244C08A20017E21D /* Dashboard */,
+				FF526C062818905200C9BCA0 /* Monthly */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +202,7 @@
 				8BE1F57A244C0C640017E21D /* SearchBar.swift */,
 				8BE1F57C244C0CD90017E21D /* FilterCategoriesView.swift */,
 				8BE1F57E244C0D720017E21D /* SelectSortOrderView.swift */,
+				FF526C092818941900C9BCA0 /* FilterMonthsView.swift */,
 			);
 			path = "Common Views";
 			sourceTree = "<group>";
@@ -189,6 +216,57 @@
 				8BE1F575244C0AB20017E21D /* PieChartView.swift */,
 			);
 			path = SwiftUICharts;
+			sourceTree = "<group>";
+		};
+		FF526BFD2818754900C9BCA0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FF526C022818789F00C9BCA0 /* Canela-Light.ttf */,
+				FF526BFE2818783700C9BCA0 /* GT.ttf */,
+				FF526C002818788100C9BCA0 /* GT-Ultra.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FF526C062818905200C9BCA0 /* Monthly */ = {
+			isa = PBXGroup;
+			children = (
+				FF526C0428188FF800C9BCA0 /* MonthlyTabView.swift */,
+			);
+			path = Monthly;
+			sourceTree = "<group>";
+		};
+		FF526C11281987FD00C9BCA0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FF526C122819880900C9BCA0 /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FF526C122819880900C9BCA0 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				FF526C132819884D00C9BCA0 /* Model */,
+				FF526C0B281953FA00C9BCA0 /* CurrencyApiService.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		FF526C132819884D00C9BCA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF526C0D28195BBE00C9BCA0 /* APICurrency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF526C14281995F700C9BCA0 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				FF526C152819962000C9BCA0 /* CurrencySettings.swift */,
+			);
+			path = Observables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +329,10 @@
 			files = (
 				8BE1F54B244C04EA0017E21D /* LaunchScreen.storyboard in Resources */,
 				8BE1F548244C04EA0017E21D /* Preview Assets.xcassets in Resources */,
+				FF526C012818788100C9BCA0 /* GT-Ultra.ttf in Resources */,
+				FF526BFF2818783700C9BCA0 /* GT.ttf in Resources */,
 				8BE1F545244C04EA0017E21D /* Assets.xcassets in Resources */,
+				FF526C032818789F00C9BCA0 /* Canela-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,13 +350,20 @@
 				8BE1F562244C08020017E21D /* CoreDataStack.swift in Sources */,
 				8BE1F55D244C07240017E21D /* Utils.swift in Sources */,
 				8BE1F543244C04E90017E21D /* ContentView.swift in Sources */,
+				FF526C0A2818941900C9BCA0 /* FilterMonthsView.swift in Sources */,
+				FF526C0C281953FA00C9BCA0 /* CurrencyApiService.swift in Sources */,
 				8BE1F576244C0AB20017E21D /* PieChartRow.swift in Sources */,
+				FF526C082818923E00C9BCA0 /* Month.swift in Sources */,
+				FF526C162819962000C9BCA0 /* CurrencySettings.swift in Sources */,
 				8BE1F57D244C0CD90017E21D /* FilterCategoriesView.swift in Sources */,
+				FF526C0E28195BBE00C9BCA0 /* APICurrency.swift in Sources */,
 				8BE1F583244C0DD10017E21D /* LogFormView.swift in Sources */,
 				8BE1F55F244C07BC0017E21D /* Sort.swift in Sources */,
 				8BE1F56B244C09510017E21D /* Extensions.swift in Sources */,
+				FF526C0528188FF800C9BCA0 /* MonthlyTabView.swift in Sources */,
 				8BE1F56E244C098B0017E21D /* CategoryImageView.swift in Sources */,
 				8BE1F569244C08D60017E21D /* LogsTabView.swift in Sources */,
+				FF526C1028196AC300C9BCA0 /* EurCurrency.swift in Sources */,
 				8BE1F578244C0AB20017E21D /* PieChartCell.swift in Sources */,
 				8BE1F577244C0AB20017E21D /* Helpers.swift in Sources */,
 				8BE1F57F244C0D720017E21D /* SelectSortOrderView.swift in Sources */,
@@ -352,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -406,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
