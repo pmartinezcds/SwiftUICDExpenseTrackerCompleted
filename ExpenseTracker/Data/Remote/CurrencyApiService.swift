@@ -12,7 +12,7 @@ import UIKit
 class CurrencyApiService: NSObject {
     
     func changeCurrency(amount: Double, completion:@escaping (EurCurrency?)-> ()) {
-        guard let url = URL(string: "https://us-central1-winged-zodiac-315621.cloudfunctions.net/demoApi2") else { return }
+        guard let url = URL(string: "https://elementsofdesign.api.stdlib.com/aavia-currency-converter@dev/") else { return }
         
         let currency = APICurrency(amount: amount, to_currency: "EUR", from_currency: "USD")
         

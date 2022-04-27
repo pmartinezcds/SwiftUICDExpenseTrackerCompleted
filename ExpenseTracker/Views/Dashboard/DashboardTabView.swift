@@ -38,14 +38,17 @@ struct DashboardTabView: View {
                             if !eur {
                                 self.eur = true
                                 self.buttonText = "EUR"
+                                CurrencyApiService().changeCurrency(amount: 1) { (amount) in
+                                    if let rate = amount?.rate {
+                                        DispatchQueue.main.async {
+                                            currency.rate = rate
+                                        }
+                                    }
+                                }
                             } else {
                                 self.eur = false
                                 self.buttonText = "USD"
-                            }
-                            CurrencyApiService().changeCurrency(amount: 1) { (amount) in
-                                if let rate = amount?.rate {
-                                    currency.rate = Int(rate)
-                                }
+                                currency.rate = 1.0
                             }
                         }
                         .background(Color("ColorGreen"))

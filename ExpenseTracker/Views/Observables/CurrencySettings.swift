@@ -9,5 +9,5 @@
 import Foundation
 
 class CurrencySettings: ObservableObject {
-    @Published var rate = 0
+    @Published var rate = 1.0
 }
